@@ -1,6 +1,24 @@
+"use client"
+import Image from 'next/image';
+import styles from './contact.module.css';
 const ContactPage = () => {
+  console.log("here");
   return (
-    <div>Contact</div>
+    <div className={styles.container}>
+      <div className={styles.imgContainer}>
+        <Image className={styles.img} src="/contact.png" alt="contact image" layout="fill" />
+      </div>
+      <div className={styles.formContainer}>
+        <form action="" className={styles.form}>
+          <input type="text" placeholder="Name And Surname" className={styles.input} />
+          <input type="text" placeholder="Email Address" className={styles.input} />
+          <input type="text" placeholder="Phone Number" className={styles.input} />
+          <textarea name='' id='' cols={30} rows={10}placeholder='Message' ></textarea>
+          <button className={styles.button} onClick={()=>{console.log("click");}}>Send</button>
+        </form>
+      </div>
+
+    </div>
   )
 }
 

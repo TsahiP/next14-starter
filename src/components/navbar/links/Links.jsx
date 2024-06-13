@@ -4,6 +4,7 @@ import styles from "./links.module.css";
 import NavLink from "./navLink/NavLink";
 import "./links.module.css";
 import { useState } from "react";
+import Image from "next/image";
 const Links = () => {
   const [open, setOpen] = useState(false);
   const links = [
@@ -43,17 +44,23 @@ const Links = () => {
           <NavLink item={{ title: "Login", path: "/login" }} />
         )}
       </div>
-      <button className={`${styles.menuButton} animate__bounceInRight`} onClick={() => setOpen((prev) => !prev)}>Menu</button>
+      <div className={styles.menuButton}>
+        <Image
+          alt="menu"
+          src="/menu.png"
+          width={30}
+          height={30}
+          onClick={() => setOpen((prev) => !prev)}
+        />
+      </div>
 
-      <div className={styles.mobileLinks}>
       {open && (
-          <>
+        <div className={styles.mobileLinks}>
           {links.map((link) => (
-              <NavLink key={link.title} item={link} />
+            <NavLink key={link.title} item={link} />
           ))}
-          </>
-        )}
         </div>
+      )}
     </div>
   );
 };

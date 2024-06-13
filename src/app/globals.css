@@ -59,7 +59,7 @@ a {
 
 @media (max-width: 768px) {
   .container {
-    width: 710px;
+    width: 640px;
     }
 }
 
@@ -70,10 +70,9 @@ a {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 475px) {
   .container {
-    width: 100%;
-    padding: 0 15px; /* Adjust padding for very small screens */
+    width: 300px;
   }
 }
 

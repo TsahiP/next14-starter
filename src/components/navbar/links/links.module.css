@@ -1,6 +1,7 @@
 .menuButton,
 .mobileLinks {
   display: none;
+  
 }
 .links {
   display: flex;
