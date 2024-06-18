@@ -1,8 +1,14 @@
-"use client"
 import Image from 'next/image';
 import styles from './contact.module.css';
+
+
+export const metadata = {
+  title: "Contact Page",
+  description: "Contact description",
+};
+
 const ContactPage = () => {
-  console.log("here");
+
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
@@ -14,7 +20,7 @@ const ContactPage = () => {
           <input type="text" placeholder="Email Address" className={styles.input} />
           <input type="text" placeholder="Phone Number" className={styles.input} />
           <textarea name='' id='' cols={30} rows={10}placeholder='Message' ></textarea>
-          <button className={styles.button} onClick={()=>{console.log("click");}}>Send</button>
+          <button className={styles.button} >Send</button>
         </form>
       </div>
 

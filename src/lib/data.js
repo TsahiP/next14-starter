@@ -1,6 +1,6 @@
 import { Post, User } from "./models";
 import { connectToDb } from "./utils";
-import { unstable_noStore as noStore } from "next/cache";
+import { unstable_noStore as noStore, revalidatePath } from "next/cache";
 
 // TEMPORARY DATA
 // const users = [
@@ -30,7 +30,10 @@ export const getPost = async (slug) => {
   try {
     // console.log("here slug: ", slug);
     connectToDb();
-    const post = await Post.findById( slug );
+    // console.log("slug: ", decodeURI(slug));
+    // console.log("slug: ", {slug});
+    const decodeSlug = decodeURI(slug);
+    const post = await Post.findOne({slug: decodeSlug});
     // console.log(post);
     return post;
   } catch (err) {
@@ -40,7 +43,7 @@ export const getPost = async (slug) => {
 };
 
 export const getUser = async (id) => {
-  console.log("id:  ", id);
+  // console.log("id:  ", id);
   noStore();
   try {
     connectToDb();
@@ -62,3 +65,4 @@ export const getUsers = async () => {
     throw new Error("Failed to fetch users!");
   }
 };
+
