@@ -4,7 +4,7 @@ import styles from "./navbar.module.css";
 import { auth } from "@/lib/auth";
 const Navbar = async () => {
   const session = await auth();
-  console.log(session);
+  // console.log(session);
   return (
     <div className={styles.container}>
       <Link href={"http://localhost:3000/"} className={styles.logo}>Logo</Link>
