@@ -13,7 +13,7 @@ const login = async (credentials) => {
 
     const user = await User.findOne({ username: credentials.username });
     if (!user) {
-      throw new Error("Wrong credentials!");
+      return( {error:"Wrong credentials!"});
     }
     // console.log(credentials.password, user.password);
     const isPasswordCorrect = await bcrypt.compare(
@@ -22,12 +22,14 @@ const login = async (credentials) => {
     );
     console.log("here", isPasswordCorrect);
     if (!isPasswordCorrect) {
-      throw new Error("Wrong password!");
+      return( {error:"Wrong password!"});
+      // throw new Error("Wrong password!");
     }
     return user;
   } catch (err) {
     console.log(err);
-    throw new Error(err);
+    // throw new Error(err);
+    return( {error:"Wrong credentials!"});
   }
 };
 
@@ -60,12 +62,7 @@ export const {
     async signIn({ user, account, profile }) {
       //   console.log("profile: ");
       //   console.log(profile);
-      //   console.log("account: ");
-      //   console.log(account);
-      //   console.log("user: ");
-      //   console.log(user);
 
-      // console.log(user,account,profile);
       if (account.provider === "github") {
         connectToDb();
         try {

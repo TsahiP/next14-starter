@@ -105,6 +105,7 @@ export const login = async (previousState,formData) => {
   try {
     connectToDb();
     // check if username exists
+    console.log(username, password);
     await signIn("credentials", { username, password });
 
     return { success: true };
