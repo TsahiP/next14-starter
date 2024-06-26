@@ -28,7 +28,7 @@ const Links = ({session}) => {
   ];
 
   const isAdmin = true;
-
+  console.log(session?.user);
   return (
     <div className={styles.container}>
       <div className={styles.links}>
