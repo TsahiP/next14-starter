@@ -10,7 +10,7 @@ export const GET = async (req,{params}) => {
         return NextResponse.json(post);
     } catch (err) {
         console.log(err);
-        res.status(400).json({ message: "Failed to fetch posts!" });
+        throw new Error("Failed to fetch post!");
     }
 }
 
@@ -22,6 +22,6 @@ export const DELETE = async (req,{params}) => {
         return NextResponse.json(post);
     } catch (err) {
         console.log(err);
-        res.status(400).json({ message: "Failed to fetch posts!" });
+        throw new Error("Failed to delete post!");
     }
 }
