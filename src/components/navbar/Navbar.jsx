@@ -7,7 +7,9 @@ const Navbar = async () => {
   // console.log(session);
   return (
     <div className={styles.container}>
-      <Link href={"http://localhost:3000/"} className={styles.logo}>Logo</Link>
+            {/* <Link href={"http://localhost:3000/"} className={styles.logo}>Logo</Link> */}
+
+      <Link href={"https://tpnext-six.vercel.app/"} className={styles.logo}>Logo</Link>
       <div>
         <Links session={session} />
       </div>

@@ -4,7 +4,8 @@ import PostUser from "@/components/postUser/postUser";
 import { Suspense } from "react";
 // import { getPost } from "@/lib/data";
 const getPost = async (slug) => {
-  const posts = await fetch(`http://localhost:3000/api/blog/${slug}`);
+  // const posts = await fetch(`http://localhost:3000/api/blog/${slug}`);
+  const posts = await fetch(`https://tpnext-six.vercel.app/api/blog/${slug}`);
   // console.log(posts);
   if (!posts.ok) {
     throw new Error("Error fetching posts");
