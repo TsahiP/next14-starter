@@ -5,11 +5,14 @@ const nextConfig = {
             {
                 protocol: "https",
                 hostname: "localhost"
-
             },
             {
                 protocol: "https",
                 hostname: "images.pexels.com"
+            },
+            {
+                protocol: "https",
+                hostname: "next14-starter-murex.vercel.app"
             }
         ]
     }

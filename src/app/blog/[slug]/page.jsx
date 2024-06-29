@@ -2,9 +2,10 @@ import Image from "next/image";
 import styles from "./singlePost.module.css";
 import PostUser from "@/components/postUser/postUser";
 import { Suspense } from "react";
+
 // import { getPost } from "@/lib/data";
 const getPost = async (slug) => {
-  // const posts = await fetch(`http://localhost:3000/api/blog/${slug}`);
+  // const posts = await fetch(`${process.env.BASE_URL}/api/blog/${slug}`);
   const posts = await fetch(`https://tpnext-six.vercel.app/api/blog/${slug}`);
   // console.log(posts);
   if (!posts.ok) {
