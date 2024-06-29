@@ -11,14 +11,14 @@ const getData = async () => {
     throw new Error("Something went wrong");
   }
 
-  return res.json();
+  return res.json() ;
 };
 
 const BlogPage = async () => {
   // FETCH DATA WITH AN API
   // const posts = await getPosts();
   const posts = await getData();
-  // console.log(posts);
+  console.log(posts);
 
   return (
     <div className={styles.container}>
